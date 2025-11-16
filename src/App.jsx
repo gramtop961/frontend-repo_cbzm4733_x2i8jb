@@ -1,17 +1,20 @@
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Sections from './components/Sections'
 import Footer from './components/Footer'
 
 function App() {
+  const [lang, setLang] = useState('id') // 'id' | 'en'
+
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <Navbar />
-      <Hero />
+    <div className="min-h-screen bg-[#F7F3F0] text-[#282828]">
+      <Navbar lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
       <main>
-        <Sections />
+        <Sections lang={lang} />
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   )
 }

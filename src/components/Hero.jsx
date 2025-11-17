@@ -19,6 +19,9 @@ export default function Hero({ lang = 'id' }) {
     },
   }[lang]
 
+  const noiseSvg = "<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(#n)' opacity='0.8'/></svg>"
+  const noiseDataUrl = `url("data:image/svg+xml,${encodeURIComponent(noiseSvg)}")`
+
   return (
     <section className="relative min-h-[88vh] flex items-center overflow-hidden">
       {/* Soft noise + subtle gradients */}
@@ -27,8 +30,7 @@ export default function Hero({ lang = 'id' }) {
         <div
           className="absolute inset-0 opacity-[0.08] mix-blend-multiply"
           style={{
-            backgroundImage:
-              "url('data:image/svg+xml;utf8,<?xml version=\\"1.0\\"?><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><filter id=\\"n\\"><feTurbulence type=\\"fractalNoise\\" baseFrequency=\\"0.8\\" numOctaves=\\"3\\" stitchTiles=\\"stitch\\"/></filter><rect width=\\"100%\\" height=\\"100%\\" filter=\\"url(%23n)\\" opacity=\\"0.8\\"/></svg>')",
+            backgroundImage: noiseDataUrl,
             backgroundSize: '220px 220px',
           }}
         />

@@ -18,6 +18,14 @@ export default function Sections({ lang = 'id' }) {
           'Metode pembelajaran tilawah yang menggabungkan irama, makna, dan rasa. Dirancang agar belajar Al-Qur\'an terasa mudah, relevan, dan menyentuh hati.',
         benefits: ['Menghadirkan tilawah yang soulful', 'Penguasaan suara & maqomat', 'Pemahaman makna ayat', 'Membangun rutinitas ngaji yang inspiratif'],
         testi: '“Belajar di Soulful Qur\'an membuat saya memahami tilawah lebih hidup dan penuh makna.”',
+        shortProfileTitle: 'Profil Singkat',
+        shortProfileBody:
+          'Qori dan pelatih maqomat, pendiri Soulful Qur\'an. Menggabungkan teknik vokal, maqomat, dan makna ayat agar tilawah menjadi indah sekaligus mendalam.',
+        stats: [
+          { k: '10K+', v: 'Alumni' },
+          { k: '50+', v: 'Program' },
+          { k: '4.9', v: 'Rating' },
+        ],
       },
       program: {
         title: 'Program',
@@ -98,6 +106,14 @@ export default function Sections({ lang = 'id' }) {
           "A recitation learning method that unites rhythm, meaning, and feeling. Designed to be easy, relevant, and heartfelt.",
         benefits: ['Achieve soulful recitation', 'Master voice & maqamat', 'Understand verse meanings', 'Build inspiring routines'],
         testi: '“Learning with Soulful Qur\'an made my recitation come alive with meaning.”',
+        shortProfileTitle: 'Short Profile',
+        shortProfileBody:
+          "Qari and maqamat coach, founder of Soulful Qur'an. Blending vocal technique, maqamat, and meaning for beautiful, heartfelt recitation.",
+        stats: [
+          { k: '10K+', v: 'Alumni' },
+          { k: '50+', v: 'Programs' },
+          { k: '4.9', v: 'Rating' },
+        ],
       },
       program: {
         title: 'Programs',
@@ -185,6 +201,33 @@ export default function Sections({ lang = 'id' }) {
             </ul>
             <p className="mt-3 text-[#936732] font-medium">{copy.profil.testi}</p>
           </InfoCard>
+        </div>
+
+        {/* Moved Short Profile here */}
+        <div className="mt-6 grid lg:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-1 p-5 rounded-2xl bg-white ring-1 ring-[#C4AA80]"
+          >
+            <div className="font-semibold text-[#282828]">{copy.profil.shortProfileTitle}</div>
+            <p className="mt-2 text-[#282828]/80">{copy.profil.shortProfileBody}</p>
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              {copy.profil.stats.map((s) => (
+                <div key={s.k} className="p-3 rounded-xl bg-[#F7F3F0] ring-1 ring-[#C4AA80]/60">
+                  <div className="text-lg font-bold text-[#282828]">{s.k}</div>
+                  <div className="text-xs text-[#282828]/70">{s.v}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <div className="lg:col-span-2 grid grid-cols-2 gap-3">
+            {[1,2,3,4].map((i) => (
+              <div key={i} className="h-24 rounded-xl bg-gradient-to-br from-[#F6D29E]/40 to-white ring-1 ring-[#C4AA80]" />
+            ))}
+          </div>
         </div>
       </Section>
 
